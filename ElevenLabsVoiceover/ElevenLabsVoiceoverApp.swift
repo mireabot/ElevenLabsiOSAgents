@@ -11,7 +11,8 @@ import SwiftUI
 struct ElevenLabsVoiceoverApp: App {
     var body: some Scene {
         WindowGroup {
-            ConversationView()
+            FitnessAssistantsHome()
+                .preferredColorScheme(.dark)
         }
     }
 }

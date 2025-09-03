@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		358A12912E4A690F00CB1767 /* FluidGradient in Frameworks */ = {isa = PBXBuildFile; productRef = 358A12902E4A690F00CB1767 /* FluidGradient */; };
 		35FAC3D12E46DBD3008BEC88 /* ElevenLabs in Frameworks */ = {isa = PBXBuildFile; productRef = 35FAC3D02E46DBD3008BEC88 /* ElevenLabs */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FAC3D12E46DBD3008BEC88 /* ElevenLabs in Frameworks */,
+				358A12912E4A690F00CB1767 /* FluidGradient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = ElevenLabsVoiceover;
 			packageProductDependencies = (
 				35FAC3D02E46DBD3008BEC88 /* ElevenLabs */,
+				358A12902E4A690F00CB1767 /* FluidGradient */,
 			);
 			productName = ElevenLabsVoiceover;
 			productReference = 3559D2752E43BAD4003DCDAB /* ElevenLabsVoiceover.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				35FAC3CF2E46DBD3008BEC88 /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */,
+				358A128F2E4A690F00CB1767 /* XCRemoteSwiftPackageReference "FluidGradient" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 3559D2762E43BAD4003DCDAB /* Products */;
@@ -345,6 +349,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		358A128F2E4A690F00CB1767 /* XCRemoteSwiftPackageReference "FluidGradient" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Cindori/FluidGradient";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		35FAC3CF2E46DBD3008BEC88 /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/elevenlabs/elevenlabs-swift-sdk.git";
@@ -356,6 +368,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		358A12902E4A690F00CB1767 /* FluidGradient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 358A128F2E4A690F00CB1767 /* XCRemoteSwiftPackageReference "FluidGradient" */;
+			productName = FluidGradient;
+		};
 		35FAC3D02E46DBD3008BEC88 /* ElevenLabs */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 35FAC3CF2E46DBD3008BEC88 /* XCRemoteSwiftPackageReference "elevenlabs-swift-sdk" */;
