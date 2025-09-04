@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/6/25.
 //

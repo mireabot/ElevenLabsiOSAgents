@@ -1,6 +1,6 @@
 //
 //  HorizontalTagsLayout.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/22/25.
 //

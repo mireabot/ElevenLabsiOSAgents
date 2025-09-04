@@ -12,13 +12,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3559D2752E43BAD4003DCDAB /* ElevenLabsVoiceover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenLabsVoiceover.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3559D2752E43BAD4003DCDAB /* ElevenLabsiOSAgents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElevenLabsiOSAgents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3559D2772E43BAD4003DCDAB /* ElevenLabsVoiceover */ = {
+		3559D2772E43BAD4003DCDAB /* ElevenLabsiOSAgents */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ElevenLabsVoiceover;
+			path = ElevenLabsiOSAgents;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -39,7 +39,7 @@
 		3559D26C2E43BAD4003DCDAB = {
 			isa = PBXGroup;
 			children = (
-				3559D2772E43BAD4003DCDAB /* ElevenLabsVoiceover */,
+				3559D2772E43BAD4003DCDAB /* ElevenLabsiOSAgents */,
 				3559D2762E43BAD4003DCDAB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,7 +47,7 @@
 		3559D2762E43BAD4003DCDAB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3559D2752E43BAD4003DCDAB /* ElevenLabsVoiceover.app */,
+				3559D2752E43BAD4003DCDAB /* ElevenLabsiOSAgents.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,9 +55,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3559D2742E43BAD4003DCDAB /* ElevenLabsVoiceover */ = {
+		3559D2742E43BAD4003DCDAB /* ElevenLabsiOSAgents */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3559D2832E43BAD5003DCDAB /* Build configuration list for PBXNativeTarget "ElevenLabsVoiceover" */;
+			buildConfigurationList = 3559D2832E43BAD5003DCDAB /* Build configuration list for PBXNativeTarget "ElevenLabsiOSAgents" */;
 			buildPhases = (
 				3559D2712E43BAD4003DCDAB /* Sources */,
 				3559D2722E43BAD4003DCDAB /* Frameworks */,
@@ -68,15 +68,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3559D2772E43BAD4003DCDAB /* ElevenLabsVoiceover */,
+				3559D2772E43BAD4003DCDAB /* ElevenLabsiOSAgents */,
 			);
-			name = ElevenLabsVoiceover;
+			name = ElevenLabsiOSAgents;
 			packageProductDependencies = (
 				35FAC3D02E46DBD3008BEC88 /* ElevenLabs */,
 				358A12902E4A690F00CB1767 /* FluidGradient */,
 			);
-			productName = ElevenLabsVoiceover;
-			productReference = 3559D2752E43BAD4003DCDAB /* ElevenLabsVoiceover.app */;
+			productName = ElevenLabsiOSAgents;
+			productReference = 3559D2752E43BAD4003DCDAB /* ElevenLabsiOSAgents.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -94,7 +94,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3559D2702E43BAD4003DCDAB /* Build configuration list for PBXProject "ElevenLabsVoiceover" */;
+			buildConfigurationList = 3559D2702E43BAD4003DCDAB /* Build configuration list for PBXProject "ElevenLabsiOSAgents" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3559D2742E43BAD4003DCDAB /* ElevenLabsVoiceover */,
+				3559D2742E43BAD4003DCDAB /* ElevenLabsiOSAgents */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +264,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ElevenLabsVoiceover/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ElevenLabsiOSAgents/Preview Content\"";
 				DEVELOPMENT_TEAM = 52W32PX8AB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -279,7 +279,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MKM.ElevenLabsVoiceover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MKM.ElevenLabsiOSAgents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -298,7 +298,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ElevenLabsVoiceover/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ElevenLabsiOSAgents/Preview Content\"";
 				DEVELOPMENT_TEAM = 52W32PX8AB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -313,7 +313,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.MKM.ElevenLabsVoiceover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MKM.ElevenLabsiOSAgents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -328,7 +328,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3559D2702E43BAD4003DCDAB /* Build configuration list for PBXProject "ElevenLabsVoiceover" */ = {
+		3559D2702E43BAD4003DCDAB /* Build configuration list for PBXProject "ElevenLabsiOSAgents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3559D2812E43BAD5003DCDAB /* Debug */,
@@ -337,7 +337,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3559D2832E43BAD5003DCDAB /* Build configuration list for PBXNativeTarget "ElevenLabsVoiceover" */ = {
+		3559D2832E43BAD5003DCDAB /* Build configuration list for PBXNativeTarget "ElevenLabsiOSAgents" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3559D2842E43BAD5003DCDAB /* Debug */,

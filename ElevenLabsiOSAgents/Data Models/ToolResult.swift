@@ -1,6 +1,6 @@
 //
 //  ToolResult.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/31/25.
 //
@@ -20,4 +20,12 @@ struct MealLog: ToolResult {
     let carbs: Int
     let fats: Int
     let protein: Int
+}
+
+/// Object which represents a sleep optimization tool result
+struct SleepOptimization: ToolResult {
+    let tool_name: String
+    let sleepTime: String
+    let wakeupTime: String
+    let ritual: String
 }

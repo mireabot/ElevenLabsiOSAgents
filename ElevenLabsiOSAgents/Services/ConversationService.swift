@@ -1,6 +1,6 @@
 //
 //  ConversationService.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/23/25.
 //
@@ -19,7 +19,7 @@ class ConversationService: ObservableObject {
     @Published var isMuted = false
     @Published var agentState: AgentState = .speaking
     // Current agent involved to conversation
-    @Published var conversationAgent: Assistant?
+    @Published var conversationAgent: Agent?
     // Tool handlers and triggers for UI display
     @Published var toolResults: [any ToolResult] = [] // storing client tools confirming to ToolResult protocol
     @Published var showToolResultCard: Bool = false
@@ -29,29 +29,17 @@ class ConversationService: ObservableObject {
     // Custom configuration for the conversation
     private var config: ConversationConfig?
     
-    var audioTrack: LocalAudioTrack? {
-        conversation?.inputTrack
-    }
-    
-    var agentAudioTrack: RemoteAudioTrack? {
-        conversation?.agentAudioTrack
-    }
-    
     // MARK: - Conversation management
     
     /// Assign selected agent to conversation
-    func selectAgent(_ assistant: Assistant) {
+    func selectAgent(_ assistant: Agent) {
         conversationAgent = assistant
     }
     
     func startConversation() async {
-        guard let agent = conversationAgent else {
-            return
-        }
+        guard let agent = conversationAgent else { return }
         
-        guard !agent.model_id.isEmpty && agent.model_id != "none" else {
-            return
-        }
+        guard !agent.model_id.isEmpty else { return } // extra guard if model_id will be missconfigured in agent object
         
         // Set up dynamic variables which will be passed when conversation will boot
         // Learn more https://elevenlabs.io/docs/agents-platform/customization/personalization/dynamic-variables
@@ -135,6 +123,8 @@ class ConversationService: ObservableObject {
             switch toolCall.toolName {
             case "log_meal":
                 await executeMealLogTool(toolCall: toolCall, parameters: parameters)
+            case "optimize_sleep_schedule":
+                await executeSleepOptimizationTool(toolCall: toolCall, parameters: parameters)
             default:
                 // Handle unknown tools
                 if toolCall.expectsResponse {
@@ -177,6 +167,29 @@ class ConversationService: ObservableObject {
         // Add the tool result and trigger UI display
         await MainActor.run {
             toolResults.append(mealLog)
+            withAnimation(.smooth) {
+                showToolResultCard = true
+            }
+        }
+    }
+    
+    /// Method which executes the meal log tool. Creates a `MealLog` object with payload from agent, then triggers UI display
+    private func executeSleepOptimizationTool(toolCall: ClientToolCallEvent, parameters: [String: Any]) async {
+        let wakeupTime = parameters["wakeup_time"] as? String ?? ""
+        let ritual = parameters["pre_sleep_ritual"] as? String ?? ""
+        let sleepTime = parameters["sleep_time"] as? String ?? ""
+        
+        let sleep_optimization = SleepOptimization(
+            tool_name: "sleep_optimization",
+            sleepTime: sleepTime,
+            wakeupTime: wakeupTime,
+            ritual: ritual
+        )
+        debugPrint(sleep_optimization)
+        
+        // Add the tool result and trigger UI display
+        await MainActor.run {
+            toolResults.append(sleep_optimization)
             withAnimation(.smooth) {
                 showToolResultCard = true
             }

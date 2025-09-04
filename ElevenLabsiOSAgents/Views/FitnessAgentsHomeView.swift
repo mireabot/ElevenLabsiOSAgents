@@ -1,6 +1,6 @@
 //
-//  FitnessAssistantsHome.swift
-//  ElevenLabsVoiceover
+//  FitnessAgentsHomeView.swift
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/20/25.
 //
@@ -8,12 +8,12 @@
 import SwiftUI
 import FluidGradient
 
-struct FitnessAssistantsHome: View {
-    private let assistants: [Assistant] = [
-        Assistants.nutritionCoach.assistant,
-        Assistants.sleepExpert.assistant,
-        Assistants.fitnessTrainer.assistant,
-        Assistants.yogaInstructor.assistant
+struct FitnessAgentsHomeView: View {
+    private let assistants: [Agent] = [
+        Agents.nutritionCoach.agent,
+        Agents.sleepExpert.agent,
+        Agents.fitnessTrainer.agent,
+        Agents.yogaInstructor.agent
     ]
     
     private let features: [String: Image] = [
@@ -36,7 +36,7 @@ struct FitnessAssistantsHome: View {
     var body: some View {
         ZStack {
             if sessionShouldStart {
-                AssistantConversationView(presentSessionScreen: $sessionShouldStart)
+                AgentConversationView(presentSessionScreen: $sessionShouldStart)
                     .environmentObject(conversationService)
             } else {
                 VStack {
@@ -65,7 +65,7 @@ struct FitnessAssistantsHome: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 16) {
                             ForEach(assistants, id: \.id) { assistant in
-                                AssistantCard(assistant: assistant)
+                                AgentCard(assistant: assistant)
                                     .onTapGesture {
                                         conversationService.selectAgent(assistant)
                                         startSessionAnimation()
@@ -120,5 +120,5 @@ struct FitnessAssistantsHome: View {
 }
 
 #Preview {
-    FitnessAssistantsHome()
+    FitnessAgentsHomeView()
 }

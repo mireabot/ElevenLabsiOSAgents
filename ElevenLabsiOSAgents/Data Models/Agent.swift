@@ -1,6 +1,6 @@
 //
 //  Assistant.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/20/25.
 //
@@ -11,7 +11,8 @@ import SwiftUI
 ///
 /// An agent is defined by its unique identifier registered in the ElevenLabs dashboard,
 /// along with visual elements and descriptive information for UI presentation.
-struct Assistant: Equatable, Identifiable {
+/// Learn more https://elevenlabs.io/docs/agents-platform/quickstart
+struct Agent: Equatable, Identifiable {
     let id = UUID().uuidString
     let name: String
     let icon: String
@@ -37,21 +38,21 @@ struct Assistant: Equatable, Identifiable {
         self.description = description
     }
     
-    static func == (lhs: Assistant, rhs: Assistant) -> Bool {
+    static func == (lhs: Agent, rhs: Agent) -> Bool {
         lhs.name == rhs.name && lhs.model_id == rhs.model_id
     }
 }
 
-enum Assistants: CaseIterable {
+enum Agents: CaseIterable {
     case nutritionCoach
     case fitnessTrainer
     case sleepExpert
     case yogaInstructor
     
-    var assistant: Assistant {
+    var agent: Agent {
         switch self {
         case .nutritionCoach:
-            return Assistant(
+            return Agent(
                 name: "Fuel",
                 icon: "carrot",
                 blobs: [.green, .green, .white, .green.opacity(0.4), .green.opacity(0.8)],
@@ -60,16 +61,16 @@ enum Assistants: CaseIterable {
                 description: "Nutritionl logging agent"
             )
         case .fitnessTrainer:
-            return Assistant(
+            return Agent(
                 name: "Boost",
                 icon: "figure.run",
                 blobs: [.red, .red, .white, .red.opacity(0.4), .red.opacity(0.8)],
                 highlights: [.orange, .yellow, .red, .pink],
-                model_id: "fitness_model_789",
+                model_id: "agent-id",
                 description: "Personal training motivator"
             )
         case .sleepExpert:
-            return Assistant(
+            return Agent(
                 name: "Drift",
                 icon: "figure.mind.and.body",
                 blobs: [.orange, .orange, .orange, .white, .orange.opacity(0.4), .orange.opacity(0.8)],
@@ -78,12 +79,12 @@ enum Assistants: CaseIterable {
                 description: "Sleep companion"
             )
         case .yogaInstructor:
-            return Assistant(
+            return Agent(
                 name: "Flow",
                 icon: "figure.yoga",
                 blobs: [.purple, .purple, .white, .purple.opacity(0.4), .purple.opacity(0.8)],
                 highlights: [.pink, .red, .purple, .indigo],
-                model_id: "yoga_model_def",
+                model_id: "agent-id",
                 description: "Mindful movement guide"
             )
         }

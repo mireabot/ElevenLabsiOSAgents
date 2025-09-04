@@ -1,6 +1,6 @@
 //
-//  AssistantConversationView.swift
-//  ElevenLabsVoiceover
+//  AgentConversationView.swift
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/23/25.
 //
@@ -9,7 +9,7 @@ import SwiftUI
 import FluidGradient
 import LiveKit
 
-struct AssistantConversationView: View {
+struct AgentConversationView: View {
     @EnvironmentObject var conversationService: ConversationService
     
     @Binding var presentSessionScreen: Bool
@@ -43,6 +43,7 @@ struct AssistantConversationView: View {
                        let toolResult = conversationService.toolResults.first {
                         ToolResultCard(toolResult: toolResult, onDismiss: {
                             conversationService.dismissToolResultCard()
+                            // Add own logic to save result to database/local storage
                         })
                         .transition(.opacity)
                     }
@@ -97,10 +98,16 @@ struct AssistantConversationView: View {
             
             Spacer()
             
-            BarAudioVisualizer(audioTrack: conversationService.audioTrack)
-                .frame(width: 12 * 4, height: 0.5 * 20)
-                .frame(maxHeight: .infinity)
-                .id(conversationService.audioTrack?.id)
+            Button {
+                Task {
+                    await conversationService.toggleMute()
+                }
+            } label: {
+                Image(systemName: conversationService.isMuted ? "microphone.slash.fill" : "microphone.fill")
+                    .foregroundStyle(.white)
+                    .contentTransition(.symbolEffect(.replace))
+            }
+
         }
         .transition(.blurReplace)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -117,6 +124,7 @@ struct AssistantConversationView: View {
 }
 
 #Preview {
-    AssistantConversationView(presentSessionScreen: .constant(true))
+    AgentConversationView(presentSessionScreen: .constant(true))
         .environmentObject(ConversationService())
+        .preferredColorScheme(.dark)
 }

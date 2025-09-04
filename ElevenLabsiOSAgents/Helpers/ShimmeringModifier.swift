@@ -1,6 +1,6 @@
 //
 //  ShimmeringModifier.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/30/25.
 //

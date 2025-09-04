@@ -1,6 +1,6 @@
 //
 //  Assistants.swift
-//  ElevenLabsVoiceover
+//  ElevenLabsiOSAgents
 //
 //  Created by Mikhail Kolkov on 8/11/25.
 //
@@ -8,10 +8,10 @@
 import SwiftUI
 import FluidGradient
 
-struct AssistantCard: View {
-    let assistant: Assistant
+struct AgentCard: View {
+    let assistant: Agent
     
-    init(assistant: Assistant) {
+    init(assistant: Agent) {
         self.assistant = assistant
     }
     
@@ -52,7 +52,7 @@ struct AssistantCard: View {
 }
 
 #Preview {
-    AssistantCard(
-        assistant: Assistants.fitnessTrainer.assistant
+    AgentCard(
+        assistant: Agents.fitnessTrainer.agent
     )
 }
