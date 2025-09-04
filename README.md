@@ -8,10 +8,11 @@ With new wave of agentic AI and voice capabilities you can enhance app experienc
 ## Get started
 1. Clone or download this repository
 2. Create an account and agents via ElevenLabs [dashboard](https://elevenlabs.io/app/agents)
+3. User [agents.md](https://github.com/mireabot/ElevenLabsiOSAgents/blob/main/agents.md) file to copy agents and tools from demo project
 ## Core files
 - `Agent.swift` - create new agents with agent_id from dashboard
 - `ConversationService.swift` - main service handling everything about conversation - selecting agent, creating a room, handling client tools
 - `ToolResult.swift` - protocol and exmaples of data objects which will populate tool result
 
 ---
-[Demo video](https://youtu.be/xEtDY_ip300) | [Fluid gradient package](https://youtu.be/xEtDY_ip300)
+[Demo video](https://youtu.be/xEtDY_ip300) | [Fluid gradient package](https://github.com/Cindori/FluidGradient)
