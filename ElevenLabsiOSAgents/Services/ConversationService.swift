@@ -203,4 +203,12 @@ class ConversationService: ObservableObject {
         }
         toolResults.removeAll()
     }
+    
+    // MARK: - Debug methods
+    
+    /// Adding sample tool result and trigger UI to display the card
+    func showDemoResultCard() {
+        showToolResultCard.toggle()
+        toolResults.append(SleepOptimization(tool_name: "sleep_optimization", sleepTime: "10:30 PM", wakeupTime:"6:45 AM", ritual: "3 minute wind-down focusing on breathing and a brief body scan"))
+    }
 }

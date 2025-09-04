@@ -85,6 +85,21 @@ struct AgentConversationView: View {
                     }
                     .opacity(showStartAnimation ? 1 : 0)
                 }
+                
+                // Debug button - comment out to test tool result card display
+                
+//                ToolbarItem(placement: .topBarTrailing) {
+//                    Button {
+//                        conversationService.showDemoResultCard()
+//                    } label: {
+//                        Image(systemName: "gear")
+//                            .font(.system(.subheadline, weight: .medium))
+//                            .foregroundStyle(.white)
+//                            .padding(10)
+//                            .background(.ultraThinMaterial)
+//                            .clipShape(Capsule())
+//                    }
+//                }
             }
         }
     }
