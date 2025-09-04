@@ -43,11 +43,11 @@ struct ToolResultCard: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
+            .padding(16)
             .background(Color(uiColor: .secondarySystemFill).opacity(0.4))
-            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .clipShape(RoundedRectangle(cornerRadius: 20))
             .overlay(
-                RoundedRectangle(cornerRadius: 16)
+                RoundedRectangle(cornerRadius: 20)
                     .stroke(.ultraThickMaterial, lineWidth: 1)
             )
         }
@@ -105,35 +105,53 @@ struct ToolResultCard: View {
     
     @ViewBuilder
     private func sleepOptimizationCard(result: SleepOptimization) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Sleep Optimization")
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Your night plan")
                 .font(.system(.title3, weight: .semibold))
                 .fontWidth(.expanded)
             
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Sleep Time")
-                    .font(.system(.subheadline, weight: .regular))
-                    .foregroundStyle(.secondary)
-                Text(result.sleepTime)
-                    .font(.system(.headline, weight: .medium))
+            ZStack {
+                HStack {
+                    VStack(alignment: .center, spacing: 2) {
+                        Text(result.sleepTime)
+                            .font(.system(.title3, weight: .medium))
+                        Text("Bed Time")
+                            .font(.system(.subheadline, weight: .regular))
+                            .foregroundStyle(.secondary)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .center, spacing: 2) {
+                        Text(result.wakeupTime)
+                            .font(.system(.title3, weight: .medium))
+                        Text("Wake Up Time")
+                            .font(.system(.subheadline, weight: .regular))
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                
+                Image(systemName: "bed.double.fill")
+                    .font(.system(.title3, weight: .regular))
+                    .symbolRenderingMode(.multicolor)
+                    .foregroundStyle(.teal)
             }
+            .frame(maxWidth: .infinity, alignment: .center)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Wake Up Time")
-                    .font(.system(.subheadline, weight: .regular))
-                    .foregroundStyle(.secondary)
-                Text(result.wakeupTime)
-                    .font(.system(.headline, weight: .medium))
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Ritual")
-                    .font(.system(.subheadline, weight: .regular))
-                    .foregroundStyle(.secondary)
+                Text("Tip before bed")
+                    .font(.system(.footnote, weight: .regular))
+                    .foregroundStyle(.tertiary)
                 Text(result.ritual)
-                    .font(.system(.headline, weight: .medium))
-                    .fixedSize(horizontal: false, vertical: true)
+                    .font(.system(.subheadline, weight: .regular))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.leading)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 10)
+            .background(.ultraThickMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
         }
     }
 }
@@ -144,4 +162,6 @@ struct ToolResultCard: View {
         
         ToolResultCard(toolResult: SleepOptimization(tool_name: "sleep_optimization", sleepTime: "10:30 PM", wakeupTime:"6:45 AM", ritual: "3 minute wind-down focusing on breathing and a brief body scan")) {}
     }
+    .padding(.horizontal)
+    .preferredColorScheme(.dark)
 })

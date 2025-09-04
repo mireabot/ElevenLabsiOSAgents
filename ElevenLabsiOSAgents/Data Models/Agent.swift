@@ -57,7 +57,7 @@ enum Agents: CaseIterable {
                 icon: "carrot",
                 blobs: [.green, .green, .white, .green.opacity(0.4), .green.opacity(0.8)],
                 highlights: [.yellow, .orange, .green, .mint],
-                model_id: "agent_9001k3cws170e8yb98wkrhjt7jz3",
+                model_id: "agent-id",
                 description: "Nutritionl logging agent"
             )
         case .fitnessTrainer:
@@ -75,7 +75,7 @@ enum Agents: CaseIterable {
                 icon: "figure.mind.and.body",
                 blobs: [.orange, .orange, .orange, .white, .orange.opacity(0.4), .orange.opacity(0.8)],
                 highlights: [.mint, .cyan, .orange, .teal],
-                model_id: "agent_9201k3cvw4k2f32r978atnm6ybww",
+                model_id: "agent-id",
                 description: "Sleep companion"
             )
         case .yogaInstructor:

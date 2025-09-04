@@ -44,6 +44,7 @@ struct AgentConversationView: View {
                         ToolResultCard(toolResult: toolResult, onDismiss: {
                             conversationService.dismissToolResultCard()
                             // Add own logic to save result to database/local storage
+                            // ex. handleToolResult(tool: ToolResult)
                         })
                         .transition(.opacity)
                     }
@@ -60,7 +61,7 @@ struct AgentConversationView: View {
                         showStartAnimation = true
                     }
                     // Start the conversation immediately after
-                    //await conversationService.startConversation()
+                    await conversationService.startConversation()
                 }
             }
             .toolbar {

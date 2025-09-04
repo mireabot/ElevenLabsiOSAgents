@@ -42,7 +42,7 @@ struct FitnessAgentsHomeView: View {
                 VStack {
                     VStack(alignment: .leading, spacing: 32) {
                         VStack(alignment: .leading, spacing: 2) {
-                            Text("Fitness assistant")
+                            Text("Wellness agents")
                                 .font(.system(size: 34, weight: .bold))
                                 .fontWidth(.expanded)
                                 .foregroundStyle(.primary)
@@ -121,4 +121,5 @@ struct FitnessAgentsHomeView: View {
 
 #Preview {
     FitnessAgentsHomeView()
+        .preferredColorScheme(.dark)
 }
